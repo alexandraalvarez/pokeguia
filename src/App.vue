@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    
+    <pokeguia></pokeguia>
+
   </div>
 </template>
+
+<script>
+import pokedata from './components/Pokeguia.vue'
+  export default {
+    data() {
+      return {
+        //
+      };
+    },
+    components: {
+      'pokeguia': pokedata,
+    }
+  }
+</script>
 
 <style lang="scss">
 #app {
