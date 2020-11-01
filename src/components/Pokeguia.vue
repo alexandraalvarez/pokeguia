@@ -90,9 +90,6 @@ export default {
         },
     },
     // components: {},
-     created: function () {
-      this.fetchCharacter;
-    },
     mounted: function () {
         this.character.name = "pikachu";
         this.fetchCharacter();
