@@ -19,17 +19,23 @@
                 </div>
                 <div class="flex-row divPoke divBgWhite">
                     <div class="d-flex justify-content-center divBgWhite"> 
-                        <img :src="image.front_default" alt="" class="mx-auto d-block">
+                        <img class="mx-auto d-block divBgWhite" :src="image.front_default" alt="" >
+                    </div>
+                    <div class="d-flex justify-content-center divBgWhite"> 
                         <h3 class="divBgWhite">{{character.name}} </h3>
                     </div>
-                    <div class="d-flex justify-content-center divMoves divBgWhite"> 
+                    <div class="d-flex justify-content-center divBgWhite"> 
                         <h3 class="text-center divBgWhite">Movimientos</h3>
+                    </div>
+                    <div class="d-flex justify-content-center divMoves divBgWhite"> 
                         <ul class="lista divBgWhite">
                             <li class="divBgWhite" v-for="(movement,index) in movements" :key="index">{{movement.move.name}}</li>
                         </ul>
                     </div>
-                    <div class="d-flex justify-content-center divAbili divBgWhite">
+                    <div class="d-flex justify-content-center divBgWhite"> 
                         <h3 class="text-center divBgWhite">Habilidades</h3>
+                    </div>
+                    <div class="d-flex justify-content-center divAbili divBgWhite">
                         <ul class="lista divBgWhite">
                             <li class="divBgWhite" v-for="(skill,index) in skills" :key="index">{{skill.ability.name}}</li>
                         </ul>
@@ -84,10 +90,13 @@ export default {
         },
     },
     // components: {},
-    //mounted() {}
-    created() {
+     created: function () {
+      this.fetchCharacter;
+    },
+    mounted: function () {
+        this.character.name = "pikachu";
         this.fetchCharacter();
-    }
+    },
 }
 </script>
 
